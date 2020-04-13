@@ -20,7 +20,7 @@ function createTable(users) {
           const xhr = new XMLHttpRequest();
           xhr.open('DELETE', '/homeworks/'+id, true);
           xhr.send(id);
-          setTimeout(() => location.reload(true), 200);
+          xhr.onload = () => location.reload();
         }
       </script>
       <button type="button" onclick="deleteHW('${users[i].id}')">X</button>
